@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../src/assets/css/custom.css';
+import '../src/assets/css/responsive-1.0.css';
+import '../src/assets/css/helper.css';
+import '../src/assets/css/magnific-popup.css';
+import '../src/assets/css/slick-1.9.0.css';
+import '../src/assets/css/all.min.css';
+import '../src/assets/css/animate.min.css';
+import '../src/assets/css/bootstrap-4.3.min.css'
+import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+// Pages
+// import Home from './pages/Home'
+import Login from './pages/Login/Login';
+import Signup from './pages/Signup/Signup';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        {/* <Route exact path="/">
+          <Home />
+        </Route> */}
+        <Route exact path="/">
+          <Login />
+        </Route>
+        <Route  exact path="/signup">
+          <Signup />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
